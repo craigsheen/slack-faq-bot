@@ -1,0 +1,6 @@
+<%- @faqs.each do |faq| %>
+  <div class='faq'>
+    <strong><%= faq.question %></strong>
+    <%= faq.answer %>
+  </div>
+<% end %>

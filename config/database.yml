@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  database: slack_faq_bot
+  host: localhost
+  pool: 13
+  user:
+  password:
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: slack-faq-bot_production
+  username: slack-faq-bot
+  pool: 5
+  encoding: unicode
+  password: <%= ENV['DATABASE_PASSWORD'] %>
