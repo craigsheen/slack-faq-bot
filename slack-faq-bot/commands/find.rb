@@ -4,10 +4,9 @@ module SlackFaqBot
       ActiveRecord::Base.establish_connection
       faqs = ::Faq.search(query).limit(3)
       answers = faqs.map.with_index do |faq, index|
-        "#{index + 1}. Added #{faq.created_at}\nQ: #{faq.question}\nA:#{faq.answer}"
+        "#{index + 1}. Added by #{data.user} on #{faq.created_at}\nQ: #{faq.question}\nA:#{faq.answer}"
       end.join("\n")
-      # TODO: URI safe query
-      client.say(channel: data.channel, text: "Top results for #{query};\n#{answers}\nSee all results: https://slack-faq-bot.herokuapp.com/faqs?query=#{query}")
+      client.say(channel: data.channel, text: "Top results for #{query};\n#{answers}\nSee all results: #{ENV['HOST']}faqs?query=#{query}")
     end
   end
 
