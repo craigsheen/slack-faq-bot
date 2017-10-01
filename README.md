@@ -2,6 +2,10 @@
 
 ![Alt text](app/assets/images/faq-bot-v1.gif?raw=true)
 
+A simple slack bot which can store FAQs (questions and answers) and query them.
+
+Still a WIP but very usable.
+
 ## Usage
 
 - `help`: Shows help information
