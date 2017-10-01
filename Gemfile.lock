@@ -44,6 +44,8 @@ GEM
     ast (2.3.0)
     bindex (0.5.0)
     builder (3.2.3)
+    bulma-rails (0.5.3)
+      sass (~> 3.2)
     byebug (9.1.0)
     capybara (2.15.1)
       addressable
@@ -244,6 +246,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bulma-rails (~> 0.5.3)
   byebug
   capybara (~> 2.13)
   celluloid-io

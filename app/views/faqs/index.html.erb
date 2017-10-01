@@ -1,6 +1,8 @@
-<%- @faqs.each do |faq| %>
-  <div class='faq'>
-    <strong><%= faq.question %></strong>
-    <%= faq.answer %>
-  </div>
-<% end %>
+<section class='section'>
+  <%- @faqs.each do |faq| %>
+    <div class='box'>
+      <strong><%= faq.question %></strong>
+      <%= faq.answer %>
+    </div>
+  <% end %>
+</section>

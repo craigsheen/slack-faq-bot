@@ -1,0 +1,10 @@
+<%= form_for :search, url: faqs_path, method: :get, html: { class: 'search-form' } do |form| %>
+  <div class='field has-addons'>
+    <div class='control is-expanded is-fullwidth'>
+      <%= text_field_tag :query, nil, { class: 'input', placeholder: 'Search' } %>
+    </div>
+    <div class='control'>
+      <%= form.submit 'Search', class: 'button is-info' %>
+    </div>
+  </div>
+<% end %>
