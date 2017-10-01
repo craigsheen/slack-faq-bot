@@ -4,7 +4,7 @@ module SlackFaqBot
       ActiveRecord::Base.establish_connection
       faq = ::Faq.new(question: question, answer: answer)
       if faq.save
-        client.say(channel: data.channel, text: "Stored; \nQ: #{question}\nA: #{answer}")
+        client.say(channel: data.channel, text: "Too easy! I've stored; \nQ: #{question}\nA: #{answer}")
       else
         client.say(channel: data.channel, text: "Sorry couldn't save because; #{errors}")
       end
