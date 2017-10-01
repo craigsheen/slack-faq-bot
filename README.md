@@ -1,5 +1,7 @@
 # Slack FAQ Bot
 
+![Alt text](app/assets/images/faq-bot-v1.gif?raw=true)
+
 ## Usage
 
 - `help`: Shows help information
