@@ -2,7 +2,8 @@ module SlackFaqBot
   def self.store(question:, answer:, client:, data:)
     catch(:exit) do
       ActiveRecord::Base.establish_connection
-      faq = ::Faq.new(question: question, answer: answer)
+      user = client.users[data.user].name
+      faq = ::Faq.new(question: question, answer: answer, channel: data.channel, user: user)
       if faq.save
         client.say(channel: data.channel, text: "Too easy! I've stored; \nQ: #{question}\nA: #{answer}")
       else

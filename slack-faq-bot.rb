@@ -4,6 +4,7 @@ require 'slack-ruby-bot'
 
 require 'active_record'
 require 'pg_search'
+require 'uri'
 require_relative 'app/models/application_record'
 require_relative 'app/models/faq'
 require_relative 'slack-faq-bot/version'
