@@ -14,7 +14,7 @@ module SlackFaqBot
 
   module Commands
     class Find < SlackRubyBot::Commands::Base
-      match(/(store) q\:(?<question>.+)a\:(?<answer>.+)/i) do |client, data, match|
+      match(/(faqbot store) q\:(?<question>.+)a\:(?<answer>.+)/i) do |client, data, match|
         SlackFaqBot.store(
           question: match[:question], answer: match[:answer],
           client: client, data: data
