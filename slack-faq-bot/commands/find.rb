@@ -4,7 +4,7 @@ module SlackFaqBot
       ActiveRecord::Base.establish_connection
       faqs = ::Faq.search(query).limit(3)
       answers = faqs.map.with_index do |faq, index|
-        created = faq.created_at.in_time_zone(ENV['TIMEZONE']).strftime("%d/%m/%Y %H:%M%p")
+        created = faq.created_at.in_time_zone(ENV['TIMEZONE']).strftime('%d/%m/%Y')
         "#{index + 1}. Added #{created} by #{faq.user}\nQ: #{faq.question}\nA:#{faq.answer}"
       end.join("\n")
       client.say(channel: data.channel, text: "Top results for #{query};\n#{answers}\nCan't see what you need? See all results: #{ENV['HOST']}faqs?query=#{URI.encode(query)}")
