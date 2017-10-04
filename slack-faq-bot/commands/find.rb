@@ -13,7 +13,7 @@ module SlackFaqBot
 
   module Commands
     class Find < SlackRubyBot::Commands::Base
-      match(/^(faqbot)\ (?!.*store)(?<query>.+)/i) do |client, data, match|
+      match(/^(faqbot)\ (?!.*store|help)(?<query>.+)/i) do |client, data, match|
         SlackFaqBot.find(query: match[:query], client: client, data: data)
       end
     end
