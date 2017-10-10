@@ -5,7 +5,7 @@ module SlackFaqBot
       user = client.users[data.user].name
       faq = ::Faq.new(question: question, answer: answer, channel: data.channel, user: user)
       if faq.save
-        client.say(channel: data.channel, text: "Too easy! I've stored; \nQ: #{question}\nA: #{answer}")
+        client.say(channel: data.channel, text: "Too easy! I've stored; \nQ: #{question}\nA: #{faq.formatted_answer}")
       else
         client.say(channel: data.channel, text: "Sorry couldn't save because; #{errors}")
       end

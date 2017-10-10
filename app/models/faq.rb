@@ -4,4 +4,8 @@ class Faq < ApplicationRecord
 
   validates :answer, presence: true
   validates :question, presence: true
+
+  def formatted_answer
+    answer.gsub(/\<(http[A-z0-9\:\/\.]*?)\>/, '\1')
+  end
 end
