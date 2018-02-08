@@ -1,0 +1,17 @@
+<section class='section'>
+  <div class='box'>
+    <%= form_for @faq do |form| %>
+      <div class='field'>
+        <%= form.label :question, class: 'label' %>
+        <%= form.text_field :question, class: 'input' %>
+      </div>
+
+      <div class='field'>
+        <%= form.label :answer, class: 'label' %>
+        <%= form.text_field :answer, class: 'input' %>
+      </div>
+
+      <%= form.submit 'Save', class: 'button is-primary' %>
+    <% end %>
+  </div>
+</section>
